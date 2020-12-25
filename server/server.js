@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const {User} = require('./models/user');
 const {auth} = require('./middleware/auth');
 
-const mongooseUrl = 'mongodb://localhost:27017/auth';
+const mongooseUrl = process.env.MONGODB_URI || 'mongodb://localhost:27017/auth';
 
 const app = express();
 mongoose.Promise = global.Promise;
